@@ -10,7 +10,7 @@ TEST_CASE("Left trim text test", "[transformation]")
 {
      LeftTrimTransformation capitalize_text_obj;
 
-    REQUIRE(capitalize_text_obj.Transform(" some-text") == "some-text");
+    REQUIRE(capitalize_text_obj.Transform(" some text") == "some text");
 }
 
 TEST_CASE("Left trim text empty string", "[transformation]")
@@ -25,7 +25,7 @@ TEST_CASE("Left trim no whitespace", "[transformation]")
 {
     LeftTrimTransformation capitalize_text_obj;
 
-    REQUIRE(capitalize_text_obj.Transform("some-text") == "some-text");
+    REQUIRE(capitalize_text_obj.Transform("some text") == "some text");
 }
 
 
@@ -43,4 +43,16 @@ TEST_CASE("Left trim only tabs and new line as white spaces", "[transformation]"
     REQUIRE(capitalize_text_obj.Transform("\tsome-text") == "some-text");
 
     REQUIRE(capitalize_text_obj.Transform("\nsome-text") == "some-text");
+}
+
+TEST_CASE("Left trim multiple white spaces test", "[transformation]")
+{
+    LeftTrimTransformation capitalize_text_obj;
+
+    REQUIRE(capitalize_text_obj.Transform("      some text") == "some text");
+
+    REQUIRE(capitalize_text_obj.Transform("   \t\t   some text") == "some text");
+
+    REQUIRE(capitalize_text_obj.Transform("   \t\n   some text") == "some text");
+
 }

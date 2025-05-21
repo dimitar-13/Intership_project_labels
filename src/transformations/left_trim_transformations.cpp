@@ -1,30 +1,33 @@
 #include "left_trim_transformations.h"
+#include "helpers/string_helper.h"
 
 std::string LeftTrimTransformation::Transform(const std::string& text)
 {
     if (text.size() == 0)
         return text;
 
-    bool is_first_element_white_space = false;
+    int first_char_appearance = -1;
 
-    is_first_element_white_space |= text[0] == '\n';
-
-    is_first_element_white_space |= text[0] == '\t';
-
-    is_first_element_white_space |= text[0] == ' ';
-
-    if (!is_first_element_white_space)
+    for (size_t i = 0; i < text.size(); i++)
     {
-        return text;
+        if (!StringHelper::IsCharWhiteSpace(text[i]))
+        {
+            first_char_appearance = i;
+            break;
+        }    
     }
+
+    if (first_char_appearance == -1)
+        return "";
 
     std::string result;
-    result.resize(text.size() - 1);
 
-    for (size_t i = 1; i < text.size(); i++)
-    {
-        result[i - 1] = text[i];
-    }
-    return result;
+    result.resize(text.size() - first_char_appearance);
    
+    for (size_t i = 0; i < result.size(); i++)
+    {
+        result[i] = text[i + first_char_appearance];
+    }
+
+    return result;
 }
