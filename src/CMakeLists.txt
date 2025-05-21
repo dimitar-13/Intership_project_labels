@@ -14,6 +14,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/labels")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/client_code")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/transformations")
 
 get_property(isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
 
