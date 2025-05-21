@@ -1,10 +1,10 @@
 #ifndef TEST
 
-#include "core/Application.h"
+#include <iostream>
 
 int main()
 {
-    Application app;
+    std::cout << "Hello world" << '\n';
 }
 
 #endif // TEST
