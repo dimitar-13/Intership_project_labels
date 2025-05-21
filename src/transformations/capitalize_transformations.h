@@ -5,5 +5,5 @@
 class CapitalizeTransformation : public TextTransformation
 {
 public:
-    std::string Transform(std::string text) override;
+    std::string Transform(const std::string& text) override;
 };

@@ -5,5 +5,5 @@ class TextTransformation
 {
 public:
     virtual ~TextTransformation() = default;
-    virtual std::string Transform(std::string text) = 0;
+    virtual std::string Transform(const std::string& text) = 0;
 };
