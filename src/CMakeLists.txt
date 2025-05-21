@@ -12,6 +12,8 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     $<$<CONFIG:Test>:TEST>
 )
 
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/labels")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/client_code")
 
 get_property(isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
 
