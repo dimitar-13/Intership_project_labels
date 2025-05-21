@@ -1,20 +1,8 @@
 #include "right_trim_transformations.h"
+#include "helpers/string_helper.h"
 
 std::string RightTrimTransformation::Transform(const std::string& text)
 {
-    auto IsCharWhiteSpace = [](char char_to_check)
-        {
-            bool is_whitespace = false;
-
-            is_whitespace |= char_to_check == '\n';
-
-            is_whitespace |= char_to_check == '\t';
-
-            is_whitespace |= char_to_check == ' ';
-
-            return is_whitespace;
-        };
-
     if (text.size() == 0)
         return text;
 
@@ -22,7 +10,7 @@ std::string RightTrimTransformation::Transform(const std::string& text)
 
     for (size_t i = 0; i < text.size(); i++)
     {
-        if (IsCharWhiteSpace(text[i]))
+        if (StringHelper::IsCharWhiteSpace(text[i]))
             last_whitespace_index = i;
         else
             last_char_index = i;
