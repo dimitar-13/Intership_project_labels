@@ -4,5 +4,8 @@
 class CensorTransformation : public TextTransformation
 {
 public:
-    std::string Transform(std::string text) override;
+    CensorTransformation(const std::string& censored_word);
+    std::string Transform(const std::string& text) override;
+private:
+    std::string m_censored_word;
 };

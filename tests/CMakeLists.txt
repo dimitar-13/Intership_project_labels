@@ -4,6 +4,7 @@ set(INPUT_SOURCES
 	right_trim_transformation_tests.cpp
 	normalize_space_transformation_tests.cpp
 	decorate_transformation_tests.cpp
+	censor_transformation_tests.cpp
 )
 
 set(INPUT_HEADERS
