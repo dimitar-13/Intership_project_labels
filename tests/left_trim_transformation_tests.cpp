@@ -8,7 +8,7 @@
 
 TEST_CASE("Left trim text test", "[transformation]")
 {
-     LeftTrimTransformation capitalize_text_obj;
+    LeftTrimTransformation capitalize_text_obj;
 
     REQUIRE(capitalize_text_obj.Transform(" some text") == "some text");
 }
